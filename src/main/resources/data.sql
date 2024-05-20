@@ -1,16 +1,16 @@
 drop table if exists message;
 drop table if exists account;
 create table account (
-    accountId int primary key auto_increment,
+    account_Id int primary key auto_increment,
     username varchar(255) not null unique,
     password varchar(255)
 );
 create table message (
-    messageId int primary key auto_increment,
-    postedBy int,
-    messageText varchar(255),
-    timePostedEpoch bigint,
-    foreign key (postedBy) references account(accountId)
+    message_Id int primary key auto_increment,
+    posted_By int,
+    message_Text varchar(255),
+    time_Posted_Epoch bigint,
+    foreign key (posted_By) references account(account_Id)
 );
 
 -- Starting test values with ids of 9999 to avoid test issues
